@@ -9,7 +9,7 @@
 	<!-- googlefonts  -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
 	<!-- stylesheet  -->
-	<link href="./styles/index.css" rel="stylesheet">
+	<link href="../styles/index.css" rel="stylesheet">
 	<!-- bootstrap 5  -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -48,7 +48,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="./assets/edit-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>INPUT CONTENT</div></div>
+        <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="../assets/edit-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>INPUT CONTENT</div></div>
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -61,7 +61,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-	  <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="./assets/row-content-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>SET LOGO  & SIZE</div></div>
+	  <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="../assets/row-content-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>SET LOGO  & SIZE</div></div>
       </button>
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -82,7 +82,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-	  <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="./assets/color-fill-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>SET COLORS</div></div>
+	  <div class="accordion-content" style="display:flex;gap:15px;align-items: center;"><img src="../assets/color-fill-svgrepo-com.svg" alt="image-edit-logo" style="width:25px;height:25px;"><div>SET COLORS</div></div>
       </button>
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -121,9 +121,9 @@
 <?php
 
 if (isset($_POST['generate'])){
-	include "qr_code/qrlib.php"; 
+	include "../qr_code/qrlib.php"; 
 	/*create folder*/
-	$tempdir="qr-file-img/";
+	$tempdir="../qr-file-img/";
 	if (!file_exists($tempdir))
 	mkdir($tempdir, 0755);
 	
@@ -134,25 +134,25 @@ if (isset($_POST['generate'])){
 	$logo_input = $_POST['logo'];
 	$size_input = $_POST['size'];
 	if($logo_input=="LN" && $size_input=="nml"){
-		$logo = "images/Ln-Logo-nml.png";
+		$logo = "../images/Ln-Logo-nml.png";
         $file_name="LN-".$_POST['qr_code_name'].".png";
 		$file_path = $tempdir.$file_name;
 		QRcode::png($_POST['qr_code_data'], $file_path, "H", 6, 4, 0, $forecolor, $backcolor, $logo);
 		/* param (1)qrcontent,(2)filename,(3)errorcorrectionlevel,(4)pixelwidth,(5)margin,(6)saveandprint,(7)forecolor,(8)backcolor */
 	}else if($logo_input=="LN" && $size_input=="lrg"){
-		$logo = "images/zyro-image-ln-xl.png";
+		$logo = "../images/zyro-image-ln-xl.png";
         $file_name="LN-".$_POST['qr_code_name'].".png";
 		$file_path = $tempdir.$file_name;
 		QRcode::png($_POST['qr_code_data'], $file_path, "H", 1080, 4, 0, $forecolor, $backcolor, $logo);
 		/* param (1)qrcontent,(2)filename,(3)errorcorrectionlevel,(4)pixelwidth,(5)margin,(6)saveandprint,(7)forecolor,(8)backcolor */
 	}else if($logo_input=="FM"&& $size_input=="nml"){
-		$logo = "images/First-Media-Logo-nml.png";
+		$logo = "../images/First-Media-Logo-nml.png";
         $file_name="FM-".$_POST['qr_code_name'].".png";
 		$file_path = $tempdir.$file_name;
 		QRcode::png($_POST['qr_code_data'], $file_path, "H", 6, 4, 0, $forecolor, $backcolor, $logo);
 		/* param (1)qrcontent,(2)filename,(3)errorcorrectionlevel,(4)pixelwidth,(5)margin,(6)saveandprint,(7)forecolor,(8)backcolor */
 	}else if($logo_input=="FM"&& $size_input=="lrg"){
-		$logo = "images/zyro-image-fm-xl.png";
+		$logo = "../images/zyro-image-fm-xl.png";
         $file_name="FM-".$_POST['qr_code_name'].".png";
 		$file_path = $tempdir.$file_name;
 		QRcode::png($_POST['qr_code_data'], $file_path, "H", 1080, 4, 0, $forecolor, $backcolor, $logo);
@@ -166,7 +166,7 @@ if (isset($_POST['generate'])){
 	<a href='".$tempdir.$file_name."' download='".$tempdir.$file_name."' style='text-decoration: none';><div class='button-act act-download'>Download QR Code</div></a>
  </div>";
 }else{
-	echo "<div class='qr-load-img'><img src='./assets/qr-code-svgrepo.png' alt='qr-load'></div>";
+	echo "<div class='qr-load-img'><img src='../assets/qr-code-svgrepo.png' alt='qr-load'></div>";
 	echo "<div class='action-button'>
     <input type='submit' name='generate' id='btn_submit' value='Generate QR Code' class='button-act act-generate'>
 	<div class='button-act act-size'>QR Code Size Preview</div>
@@ -190,7 +190,7 @@ if (isset($_POST['generate'])){
       <div class="swiper-wrapper">
 
       <?php
-     $files = glob("qr-file-img/*.*");
+     $files = glob("../qr-file-img/*.*");
      for ($i=0; $i<count($files); $i++)
       {
         $image = $files[$i];
@@ -277,7 +277,7 @@ if (isset($_POST['generate'])){
 </div>
 	
 	<script src="jquery-1.10.2.min.js"></script>
-	<script src="./script/index.js"></script>
+	<script src="../script/index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
    
