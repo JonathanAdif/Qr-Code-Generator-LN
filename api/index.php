@@ -9,7 +9,7 @@
 	<!-- googlefonts  -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
 	<!-- stylesheet  -->
-	<link href="../styles/index.css" rel="stylesheet">
+	<link href="./styles/index.css" rel="stylesheet">
 	<!-- bootstrap 5  -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
